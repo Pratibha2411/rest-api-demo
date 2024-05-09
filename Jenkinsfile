@@ -3,7 +3,7 @@ pipeline {
     environment {
         // Defining the credentials ID for accessing the Git repository
 //        GIT_CREDENTIALS_ID = 'githubCred'
-        SONAR_HOME = tool "sonarScanner"
+        SONAR_HOME = tool "sonarscanner"
         DOCKERHUB_TOKEN = credentials('dockerHubToken')
         DOCKER_USERNAME = credentials('dockerHubUser')
     }
