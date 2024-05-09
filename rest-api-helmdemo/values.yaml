@@ -1,0 +1,23 @@
+replicaCount: 1
+
+image:
+  repository: pbaloriya/rest-api-demo
+  pullPolicy: IfNotPresent
+  tag: "latest"
+
+service:
+  type: NodePort
+  port: 30009
+  targetPort: 3000
+
+serviceAccount:
+  create: true
+
+ingress:
+  enabled: false # Set to true if you want to enable Ingress
+
+autoscaling:
+  enabled: false # Set to true if you want to enable Horizontal Pod Autoscaler
+  minReplicas: 1
+  maxReplicas: 2
+  targetCPUUtilizationPercentage: 50
