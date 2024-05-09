@@ -79,6 +79,7 @@ helm install <release_name> ./rest-api-helmdemo --namespace <your_namespace>
 ```
 
 **Monitor Application with Prometheus, Grafana, and Loki.**
+For More: https://www.notion.so/Deploying-REST-API-App-on-Kubernetes-with-Helm-Charts-and-ArgoCD-47b4c220f249472abed198b8f788f380?pvs=4
 
 ### **Conclusion:**
 
