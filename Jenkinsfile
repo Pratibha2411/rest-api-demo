@@ -17,7 +17,7 @@ pipeline {
         }
         stage('SonarQube Analysis') {
             steps {
-                withSonarQubeEnv("sonarScannerTool") {
+                withSonarQubeEnv("sonarqube-server-token") {
                     sh '$SONAR_HOME/bin/sonar-scanner -Dsonar.projectName=rest-api-demo -Dsonar.projectKey=rest-api-demo -X'
                 }
             }
