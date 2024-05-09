@@ -3,7 +3,7 @@ pipeline {
     environment {
         // Defining the credentials ID for accessing the Git repository
 //        GIT_CREDENTIALS_ID = 'githubCred'
-        SONAR_HOME = tool "sonarscanner"
+        SONAR_HOME = tool "sonarScannerTool"
         DOCKERHUB_TOKEN = credentials('dockerHubToken')
         DOCKER_USERNAME = credentials('dockerHubUser')
     }
@@ -17,7 +17,7 @@ pipeline {
         }
         stage('SonarQube Analysis') {
             steps {
-                withSonarQubeEnv("sonarscanner") {
+                withSonarQubeEnv("sonarScannerTool") {
                     sh '$SONAR_HOME/bin/sonar-scanner -Dsonar.projectName=rest-api-demo -Dsonar.projectKey=rest-api-demo -X'
                 }
             }
