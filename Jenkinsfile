@@ -40,7 +40,7 @@ pipeline {
             steps {
                 echo 'Pushing to Docker Hub the app'
                 withCredentials([usernamePassword(credentialsId: "dockerHubToken", usernameVariable: "DOCKER_USERNAME", passwordVariable: "DOCKERHUB_TOKEN")]) {
-//                    sh "docker login -u $DOCKER_USERNAME -p $DOCKERHUB_TOKEN"
+                    sh "docker login -u $DOCKER_USERNAME -p $DOCKERHUB_TOKEN"
                     sh "docker tag rest-api-demo $DOCKER_USERNAME/rest-api-demo:latest"
                     sh "docker push $DOCKER_USERNAME/rest-api-demo:latest"
                 }
