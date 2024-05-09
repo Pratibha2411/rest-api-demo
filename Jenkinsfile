@@ -2,7 +2,7 @@ pipeline {
     agent any
     environment {
         // Defining the credentials ID for accessing the Git repository
-        GIT_CREDENTIALS_ID = 'githubCred'
+//        GIT_CREDENTIALS_ID = 'githubCred'
         SONAR_HOME = tool "sonarScanner"
         DOCKERHUB_TOKEN = credentials('dockerHubToken')
         DOCKER_USERNAME = credentials('dockerHubUser')
@@ -12,7 +12,7 @@ pipeline {
         stage('Clone') {
             steps {
                 echo 'Cloning the app'
-                git credentialsId: env.GIT_CREDENTIALS_ID
+//                git credentialsId: env.GIT_CREDENTIALS_ID
             }
         }
         stage('SonarQube Analysis') {
