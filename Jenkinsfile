@@ -7,14 +7,6 @@ pipeline {
         DOCKERHUB_TOKEN = credentials('dockerHubToken')
         DOCKER_USERNAME = credentials('dockerHubUser')
     }
-
-    stages {
-        stage('Clone') {
-            steps {
-                echo 'Cloning the app'
-//                git credentialsId: env.GIT_CREDENTIALS_ID
-            }
-        }
         stage('SonarQube Analysis') {
             steps {
                 withSonarQubeEnv("sonarqube-server-system-sync") {
