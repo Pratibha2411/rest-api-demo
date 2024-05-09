@@ -7,6 +7,7 @@ pipeline {
         DOCKERHUB_TOKEN = credentials('dockerHubToken')
         DOCKER_USERNAME = credentials('dockerHubUser')
     }
+     stages{
         stage('SonarQube Analysis') {
             steps {
                 withSonarQubeEnv("sonarqube-server-system-sync") {
@@ -46,4 +47,3 @@ pipeline {
         }
     }
 }
-
